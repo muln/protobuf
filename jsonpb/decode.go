@@ -152,7 +152,7 @@ func (u *Unmarshaler) unmarshalMessage(m protoreflect.Message, in []byte) error 
 
 		rawTypeURL, ok := jsonObject["@type"]
 		if !ok {
-			return errors.New("Any JSON doesn't have '@type'")
+			return nil
 		}
 		typeURL, err := unquoteString(string(rawTypeURL))
 		if err != nil {
